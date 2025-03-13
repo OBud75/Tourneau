@@ -1,0 +1,25 @@
+mkdir assets
+
+cd assets
+
+touch img_{1..10}.png
+
+echo "Hello, world" >> du_texte.txt
+
+for file in *.png; do mv "$file" "${file%.png}.jpeg"; done
+
+mkdir medias
+
+mv *.jpeg medias/
+
+Réponse : 
+PNG = image avec zones de couleurs + fond transparent
+TXT = Texte 
+JPEG = image type photographie (plus de variations de couleur)
+
+echo "echo \"Hello, world\"" >> script
+sed -i '1i #!/usr/bin/bash' script
+
+La différence c'est qui si on le rend exécutable
+chmod +x script
+Alors on peut l'exécuter en faisant ./script
