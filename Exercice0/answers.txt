@@ -1,0 +1,3 @@
+GNU est un semble d'outils logiciel tandis que Linux est un noyau système.
+
+C'est Linus Torvalds qui a crée Linux et il a aussi crée Git.
