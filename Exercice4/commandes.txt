@@ -1,0 +1,18 @@
+mkdir shared
+
+sudo chown toto:toto shared/
+ls -l
+
+su toto
+
+echo "echo toto" > shared/owned_by_toto
+
+sudo chown Toto:Toto shared/owned_by_toto
+
+sudo gedit shared/owned_by_toto
+
+chmod +x shared/owned_by_toto
+
+Réponse :
+Elle donne le droit d'exécuter au groupe propriétaire
+Elle change le propriétaire et le groupe propriétaire du fichier en le remplaçant par le groupe root et l'utilisateur root

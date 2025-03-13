@@ -1,0 +1,5 @@
+sudo systemctl daemon-reload
+
+sudo systemctl start ou stop service
+
+l'option restart stop et redémarre le service utile pour relancer les fichiers de conf

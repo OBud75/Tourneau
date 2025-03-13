@@ -1,0 +1,25 @@
+gedit script
+
+chmod +x script
+
+python3 -m venv pythonvenv
+
+source pythonvenv/bin/activate
+
+pip install flask
+
+pip freeze > requirements.txt
+
+echo "pythonvenv/" > .gitignore
+
+Réponses : 
+Il faudrait y ajouter tout les .env qui sont les variables d'environnemennts ainsi que les .log
+qui pourrait contenir des informations sensibles.
+
+apt update met à jour la liste des paquets
+apt upgrade installe les dernières versions des paquets déjà installés
+
+apt autoclean supprime les fichiers .deb du cache qui ne peuvent plus être téléchargé
+apt clean supprime tout les fichiers .deb du cache
+apt autoremove supprime des paquets qui ne servent plus
+apt purge supprime les paquets et leur fichier de config

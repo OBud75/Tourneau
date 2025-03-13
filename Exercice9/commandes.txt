@@ -1,0 +1,21 @@
+HTTP est un protocol qui permet de transférer des données sur le web mais il n'est pas chiffré.
+HTTPS est une version plus sécurisé de l'HTTP qui chiffre les données transférer.
+
+Port 80 réservé pour l'HTTP
+Port 22 réservé pour le SSH
+Port 443 réservé pour l'HTTPS
+
+sudo ufw enable
+sudo ufw disable
+sudo ufw status verbose
+
+Nginx est utilisé comme serveur web
+
+MVC = Modèle vue contrôleur
+Modèle gère les données
+Vue affiche les données
+Contrôleur gère les interactions de l'utilisateur
+
+C'est une meilleure organisation qui rend la compréhension plus simple en séparant les différentes parties d'une application
+
+CRUD signifie Create/Read/update/Delete

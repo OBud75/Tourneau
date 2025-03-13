@@ -1,0 +1,28 @@
+cat ~/../../etc/passwd
+
+sudo adduser toto
+
+groups toto
+
+sudo addgroup shared
+
+sudo usermod -aG shared ton_utilisateur
+
+sudo usermod -aG shared toto
+
+sudo permet d'exécuter des commandes avec les priilèges root 
+
+Non il faut être dans le fichier sudoers pour pouvoir l'utiliser 
+
+pour donner à toto le droit d'utiliser la commande "apt update" il faut modifier le fichier
+etc/sudoers en utilisant la commande "sudo visudo" et rajouter cette ligne :
+toto ALL=(ALL:ALL) /usr/bin/apt install
+
+Pour à la place lui donner le droit d'utiliser sudo il faut mettre :
+Toto ALL=(ALL:ALL) ALL
+
+On n'utilise pas l'utilisateur root pour éviter les problèmes liés aux privilèges trop important.
+Tel que supprimé des fichiers essentielles.
+
+il existe un fichier "toto/.bashr"
+auquel il faut rajouter "echo "Bienvenue Toto"

@@ -1,0 +1,25 @@
+#!/usr/bin/bash
+
+check_argv() {
+  if [ -z "$1" ]; then
+    echo 0
+  else
+    echo 1
+  fi
+}
+
+result=$(check_argv "$1")
+echo "$result"
+
+case "$2" in
+  "hello")
+    echo "2eme arg : Hello"
+    ;;
+  "toto")
+    echo "2eme arg : Toto"
+    ;;
+  *)
+    echo "2eme arg: Autre chose"
+    ;;
+esac
+

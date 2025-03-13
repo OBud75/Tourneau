@@ -1,0 +1,17 @@
+mkdir commandes
+
+for i in {1..100}; do echo "Ligne $i" >> commandes/too_long; done
+
+head -n 5 commandes/too_long
+tail -n 7 commandes/too_long
+sort -k2 -rn commandes/too_long | head -n 3
+
+sed -n '42p' commandes/too_long
+
+sed -i '42s/.*/The Ultimate Question of Life, the Universe and Everything/' commandes/too_long
+
+gedit commandes/script
+chmod +x commandes/script
+
+if/else vont être plus adaptés pour des conditions complexes
+tandis qu'un switch est plus adapté pour des comparaisons ou égalités simple de variables

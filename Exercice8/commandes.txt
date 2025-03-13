@@ -1,0 +1,60 @@
+emerg	Système inutilisable
+alert	Intervention immédiate nécessaire
+crit	Erreur système critique
+err	Erreur de fonctionnement
+warning	Avertissement
+notice	Evénement normal mais devant être signalé
+info	Messages d'information
+debug	Message de débogage
+
+gedit logger
+
+chmod +x loggerls
+
+éditer le fichier : /etc/systemd/journald.conf
+et mettre SystemMaxFileSize=200M
+
+éditer le fichier : /etc/logrotate.d/nginx
+/var/log/nginx/*.log {
+        daily
+        missingok
+        rotate 14
+        compress
+        delaycompress
+        notifempty
+        create 0640 www-data adm
+        sharedscripts
+        prerotate
+                if [ -d /etc/logrotate.d/httpd-prerotate ]; then \
+                        run-parts /etc/logrotate.d/httpd-prerotate; \
+                fi \
+        endscript
+        postrotate
+                invoke-rc.d nginx rotate >/dev/null 2>&1
+        endscript
+}
+
+Et remplacer les valeurs par
+
+/var/log/nginx/*.log {
+        monthly
+        missingok
+        rotate 12
+        compress
+        delaycompress
+        notifempty
+        create 644 root root
+        sharedscripts
+        prerotate
+                if [ -d /etc/logrotate.d/httpd-prerotate ]; then \
+                        run-parts /etc/logrotate.d/httpd-prerotate; \
+                fi \
+        endscript
+        postrotate
+                invoke-rc.d nginx rotate >/dev/null 2>&1
+        endscript
+}
+
+Premièrement la loi oblige de garder des logs pendant une certaine durée.
+Deuxièment il est plus facile d'analyser des logs lorsque celle-ci sont petites
+Et surtout ça libère de l'espace

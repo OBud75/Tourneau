@@ -1,0 +1,14 @@
+#!/usr/bin/bash
+
+read -p "Choisissez votre environnement (dev, prod, test) : " ENVIRON
+
+case "$ENVIRON" in
+  "dev"|"prod"|"test")
+    export ENVIRON
+    echo "Vous êtes en : $ENVIRON"
+    ;;
+  *)
+    echo "Choix incorrect."
+    exit 1
+    ;;
+esac
