@@ -1,6 +1,11 @@
 mkdir commandes
 
-for i in {1..100}; do echo "Ligne $i" >> commandes/too_long; done
+for i in {1..100};
+  do echo "Ligne $i" >> commandes/too_long;
+done
+
+printf "Ligne %s\n" {1..100} > too_long
+
 
 head -n 5 commandes/too_long
 tail -n 7 commandes/too_long
@@ -15,3 +20,8 @@ chmod +x commandes/script
 
 if/else vont être plus adaptés pour des conditions complexes
 tandis qu'un switch est plus adapté pour des comparaisons ou égalités simple de variables
+
+Un if/else va traiter les conditions de manière linéaire alors qu'un switch se comporte comme une hash table / dictionnaire
+Dans les faits, si vous savez que l'utilisateur a plus de chances de choisir a que b et plus de chances de choisir b que c, on préferera un
+if a; else if b; else if c;
+Alors que si les 3 possibilités sont +/- égales, un switch est adapté.
