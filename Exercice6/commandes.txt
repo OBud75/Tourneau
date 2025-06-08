@@ -3,3 +3,7 @@ sudo systemctl daemon-reload
 sudo systemctl start ou stop service
 
 l'option restart stop et redémarre le service utile pour relancer les fichiers de conf
+
+# Oui pour la conf
+# A noter que restart de stop pas complètement le process, cela peut avoir une grosse importance, par exemple pour un service
+# de gestion de base de données tel que Postgres, stop + start créera une nouvelle connection à la base et pas restart. 
